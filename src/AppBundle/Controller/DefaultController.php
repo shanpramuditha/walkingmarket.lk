@@ -18,4 +18,24 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ));
     }
+
+    /**
+     * @Route("/dashboard", name="dashboard")
+     */
+    public function dashboardAction(Request $request)
+    {
+        return $this->render('default/dashboard.html.twig', array(
+            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ));
+    }
+
+    /**
+     * @Route("/elements", name="elements")
+     */
+    public function elementsAction(Request $request)
+    {
+        return $this->render('default/elements.html.twig', array(
+            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ));
+    }
 }

@@ -37,4 +37,22 @@ class DefaultController extends Controller
         ));
     }
 
+    public function getRepository($entity){
+        //get the repository
+        return $entityRepo=$this->getDoctrine()
+            ->getRepository('AppBundle:'.$entity);
+    }
+
+    public function getDoctrineManager(){
+        //get doctrine manager
+        return $this->getDoctrine()->getManager();
+    }
+
+    public function insert($obj){
+        $em = $this->getDoctrineManager();
+        $em->persist($obj);
+        $em->flush();
+        return true;
+    }
+
 }

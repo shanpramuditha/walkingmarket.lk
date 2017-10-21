@@ -33,20 +33,31 @@
 
             <p>Already member? <a href="{{ url('login') }}">Login!</a></p>
 
-            <form class="an-form" action="#">
+            {{ form_start(form,{'attr': {'class':'an-form'}}) }}
                 <div class="row">
                     <div class="col-sm-12">
-                        <input type="email" class="an-form-control light" placeholder="E mail">
+                        {{ form_widget(form.email, {'attr' : {'class': 'an-form-control light'}}) }}
+                    </div>
+                    <div class="col-sm-12">
+                        {{ form_widget(form.phone, {'attr' : {'class': 'an-form-control light'}}) }}
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="an-form-control light" placeholder="First name">
+                        {{ form_widget(form.firstName, {'attr' : {'class': 'an-form-control light'}}) }}
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="an-form-control light" placeholder="Last name">
+                        {{ form_widget(form.lastName, {'attr' : {'class': 'an-form-control light'}}) }}
+                    </div>
+
+                    <div class="col-sm-6">
+                        {{ form_widget(form.password.first, {'attr' : {'class': 'an-form-control light'}}) }}
+                    </div>
+
+                    <div class="col-sm-6">
+                        {{ form_widget(form.password.second, {'attr' : {'class': 'an-form-control light'}}) }}
                     </div>
 
                     <div class="col-sm-12">
-                        <input type="password" class="an-form-control light" placeholder="Password">
+                        {{ form_widget(form.loggedIn, {'attr' : {'class': 'an-custom-checkbox radio light'}}) }}
                     </div>
                 </div>
 
@@ -62,8 +73,8 @@
 
                 <p class="terms">By creating a site you have to agree the <a href="#">Terms of Service</a> and <a href="#">Privecy Policy</a></p>
 
-                <button type="submit" class="an-btn an-btn-default large-padding btn-lg">Register</button>
-            </form>
+                {{ form_widget(form.register, {'attr' : {'class': 'an-btn an-btn-default large-padding btn-lg'}}) }}
+            {{ form_end(form) }}
         </div>
     </div>
 

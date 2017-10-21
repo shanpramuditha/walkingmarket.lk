@@ -20,12 +20,11 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/dashboard", name="dashboard")
+     * @Route("/dashboard/test", name="dashboard")
      */
     public function dashboardAction(Request $request)
     {
         return $this->render('default/dashboard.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ));
     }
 
@@ -35,7 +34,7 @@ class DefaultController extends Controller
     public function elementsAction(Request $request)
     {
         return $this->render('default/elements.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ));
     }
+
 }
